@@ -1,0 +1,37 @@
+{
+  "name": "sf-chain",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watchALL",
+    "dev-test": "nodemon dev-test",
+    "start": "node ./app",
+    "dev": "nodemon ./app",
+    
+    "dev-peer2": "cross-env HTTP_PORT=3002 P2P_PORT=5002 PEERS=ws://localhost:5001 node ./app",
+    "dev-peer3": "cross-env HTTP_PORT=3003 P2P_PORT=5003 PEERS=ws://localhost:5001,ws://localhost:5002 node ./app",
+    "dev-peer4": "cross-env HTTP_PORT=3004 P2P_PORT=5004 PEERS=ws://localhost:5001,ws://localhost:5002,ws://localhost:5003 node ./app"
+  },
+  "jest": {
+    "testEnvironment": "node"
+    
+  }, 
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "cross-env": "^10.0.0",
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "crypto-js": "^4.2.0",
+    "elliptic": "^6.6.1",
+    "express": "^5.1.0",
+    "save": "^2.9.0",
+    "uuid": "^11.1.0",
+    "ws": "^8.18.3"
+  }
+}
